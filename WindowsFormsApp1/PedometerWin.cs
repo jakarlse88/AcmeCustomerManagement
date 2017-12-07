@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ACM.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,9 +18,22 @@ namespace WindowsFormsApp1
 			InitializeComponent();
 		}
 
-		private void PedometerWin_Load(object sender, EventArgs e)
+		private void label1_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private void label3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void CalculateButton_Click(object sender, EventArgs e)
+		{
+			var customer = new Customer();
+			var result = customer.CalculatePercentOfGoalSteps(this.GoalTextBox.Text,
+																this.StepsTextBox.Text);
+			ResultLabel.Text = "You reached " + result + "% of your goal.";
 		}
 	}
 }

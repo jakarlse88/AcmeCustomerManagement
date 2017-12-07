@@ -7,8 +7,8 @@ namespace ACM.BL
 	/// <summary>
 	/// Manages a single customer.
 	/// </summary>
-    public class Customer
-    {
+	public class Customer
+	{
 		public int CustomerId { get; set; }
 		public string EmailAddress { get; set; }
 		public string FirstName { get; set; }
@@ -34,6 +34,25 @@ namespace ACM.BL
 			// get the customer data.
 			// Ensure a valid email address was provided.
 			// If not, request an email address from the user.
+		}
+
+		public decimal CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
+		{
+			// Try 3
+			if (string.IsNullOrWhiteSpace(goalSteps)) throw new ArgumentException("Goal must be entered", "goalSteps");
+			if (string.IsNullOrWhiteSpace(actualSteps)) throw new ArgumentException("Goal must be entered", "actualSteps");
+
+			if (!decimal.TryParse(goalSteps, out decimal goalStepsCount)) throw new ArgumentException("Goal must be numeric", "goalSteps");
+			if (!decimal.TryParse(actualSteps, out decimal actualStepsCount)) throw new ArgumentException("Actual steps must be numeric", "actualSteps");
+
+			return CalculatePercentOfGoalSteps(goalStepsCount, actualStepsCount);
+		}
+
+		public decimal CalculatePercentOfGoalSteps(decimal goalStepsCount, decimal actualStepsCount)
+		{
+			if (goalStepsCount <= 0) throw new ArgumentException("Goal must be greater than 0", "goalSteps");
+
+			return (actualStepsCount / goalStepsCount) * 100;
 		}
 	}
 }
