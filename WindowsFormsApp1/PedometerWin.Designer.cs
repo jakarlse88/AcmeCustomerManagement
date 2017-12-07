@@ -93,7 +93,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(726, 381);
+			this.ClientSize = new System.Drawing.Size(718, 186);
 			this.Controls.Add(this.ResultLabel);
 			this.Controls.Add(this.CalculateButton);
 			this.Controls.Add(this.StepsTextBox);
@@ -101,7 +101,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Name = "PedometerWin";
-			this.Text = "PedometerWin";
+			this.Text = "Pedometer";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
