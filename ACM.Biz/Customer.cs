@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -27,13 +28,39 @@ namespace ACM.BL
 			this.LastName = lastName;
 		}
 
-		public void ValidateEmail()
+		public OperationResult ValidateEmail()
 		{
-			// -- Send an email receipt --
-			// If the user requested a receipt,
-			// get the customer data.
-			// Ensure a valid email address was provided.
-			// If not, request an email address from the user.
+			var op = new OperationResult();
+
+			if (string.IsNullOrWhiteSpace(this.EmailAddress))
+			{
+				op.Success = false;
+				op.AddMessage("Email address is null");
+			}
+
+			if (op.Success == true)
+			{
+				var isValidFormat = true;
+				// Code to validate format using regex
+				if (!isValidFormat)
+				{
+					op.Success = false;
+					op.AddMessage("Email address uses incorrect format");
+				}
+			}
+
+			if (op.Success == true)
+			{
+				var isValidDomain = true;
+				// Code to confirm whether domain exists
+				if (!isValidDomain)
+				{
+					op.Success = false;
+					op.AddMessage("Email address does not include a valid domain");
+				}
+			}
+
+			return op;
 		}
 
 		public decimal CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)

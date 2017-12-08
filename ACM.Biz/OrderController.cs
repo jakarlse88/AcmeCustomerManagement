@@ -39,11 +39,15 @@ namespace ACM.BL
 
 			if (emailReceipt)
 			{
-				customer.ValidateEmail();
-				customerRepository.Update();
-				
-				emailLibrary.SendEmail(customer.EmailAddress,
-										"Please find attached the requested receipt.");
+				var op = customer.ValidateEmail();
+
+				if (op.Success == true)
+				{
+					customerRepository.Update();
+
+					emailLibrary.SendEmail(customer.EmailAddress,
+											"Please find attached the requested receipt.");
+				}
 			}
 		}
 	}
