@@ -9,17 +9,17 @@ namespace ACM.BL
 {
 	public class OrderController
 	{
-		private CustomerRepository customerRepository { get; set; }
-		private OrderRepository orderRepository { get; set; }
-		private InventoryRepository inventoryRepository { get; set; }
-		private EmailLibrary emailLibrary { get; set; }
+		private CustomerRepository CustomerRepository { get; set; }
+		private OrderRepository OrderRepository { get; set; }
+		private InventoryRepository InventoryRepository { get; set; }
+		private EmailLibrary EmailLibrary { get; set; }
 
 		public OrderController()
 		{
-			this.customerRepository = new CustomerRepository();
-			this.orderRepository = new OrderRepository();
-			this.inventoryRepository = new InventoryRepository();
-			this.emailLibrary = new EmailLibrary();
+			this.CustomerRepository = new CustomerRepository();
+			this.OrderRepository = new OrderRepository();
+			this.InventoryRepository = new InventoryRepository();
+			this.EmailLibrary = new EmailLibrary();
 		}
 		
 		public void PlaceOrder(Customer customer, 
@@ -29,11 +29,11 @@ namespace ACM.BL
 										bool emailReceipt)
 		{
 			
-			customerRepository.Add(customer);
+			CustomerRepository.Add(customer);
 			
-			orderRepository.Add(order);
+			OrderRepository.Add(order);
 			
-			inventoryRepository.OrderItems(order, allowSplitOrders);
+			InventoryRepository.OrderItems(order, allowSplitOrders);
 
 			payment.ProcessPayment();
 
@@ -43,9 +43,9 @@ namespace ACM.BL
 
 				if (op.Success == true)
 				{
-					customerRepository.Update();
+					CustomerRepository.Update();
 
-					emailLibrary.SendEmail(customer.EmailAddress,
+					EmailLibrary.SendEmail(customer.EmailAddress,
 											"Please find attached the requested receipt.");
 				}
 			}
