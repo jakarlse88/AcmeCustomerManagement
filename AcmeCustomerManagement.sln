@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Common", "Core.Common\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACM.Win", "WindowsFormsApp1\ACM.Win.csproj", "{2A99B314-B6E4-48CC-99D7-822F0DB2BB4F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestProjects", "TestProjects", "{AA3DE710-8AA0-4E98-912A-93ED7934D103}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACM.BLTests", "ACM.BLTests\ACM.BLTests.csproj", "{65A64DA2-B78F-4F81-8AC8-86E5DAEFDE0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{2A99B314-B6E4-48CC-99D7-822F0DB2BB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A99B314-B6E4-48CC-99D7-822F0DB2BB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A99B314-B6E4-48CC-99D7-822F0DB2BB4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A64DA2-B78F-4F81-8AC8-86E5DAEFDE0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A64DA2-B78F-4F81-8AC8-86E5DAEFDE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A64DA2-B78F-4F81-8AC8-86E5DAEFDE0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A64DA2-B78F-4F81-8AC8-86E5DAEFDE0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{65A64DA2-B78F-4F81-8AC8-86E5DAEFDE0B} = {AA3DE710-8AA0-4E98-912A-93ED7934D103}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2B68A4C6-76C2-4F53-ABA8-A73E672FD724}
