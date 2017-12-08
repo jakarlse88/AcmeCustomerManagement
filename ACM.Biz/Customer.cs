@@ -65,7 +65,6 @@ namespace ACM.BL
 
 		public decimal CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
 		{
-			// Try 3
 			if (string.IsNullOrWhiteSpace(goalSteps)) throw new ArgumentException("Goal must be entered", "goalSteps");
 			if (string.IsNullOrWhiteSpace(actualSteps)) throw new ArgumentException("Goal must be entered", "actualSteps");
 

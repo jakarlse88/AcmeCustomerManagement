@@ -62,6 +62,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="OrderWin.resx">
+      <DependentUpon>OrderWin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PedometerWin.resx">
       <DependentUpon>PedometerWin.cs</DependentUpon>
     </EmbeddedResource>

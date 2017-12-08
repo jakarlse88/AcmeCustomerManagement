@@ -6,7 +6,12 @@ namespace WindowsFormsApp1
 {
 	public partial class OrderWin : Form
 	{
-		public void Button1_Click(object sender, EventArgs e)
+		public OrderWin()
+		{
+			InitializeComponent();
+		}
+
+		private void button1_Click_1(object sender, EventArgs e)
 		{
 			PlaceOrder();
 		}
@@ -23,11 +28,18 @@ namespace WindowsFormsApp1
 			var payment = new Payment();
 
 			var orderController = new OrderController();
-			orderController.PlaceOrder(customer, 
-										order, 
-										payment, 
-										allowSplitOrders:false, 
-										emailReceipt:true);
+
+			try
+			{
+				var op = orderController.PlaceOrder(customer, order, payment,
+					allowSplitOrders: false,
+					emailReceipt: true);
+			}
+			catch (ArgumentNullException ex)
+			{
+				// Log issue
+				// Display message to user that the order was not succesful
+			}
 		}
 	}
 }

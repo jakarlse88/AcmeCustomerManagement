@@ -31,9 +31,17 @@ namespace WindowsFormsApp1
 		private void CalculateButton_Click(object sender, EventArgs e)
 		{
 			var customer = new Customer();
-			var result = customer.CalculatePercentOfGoalSteps(this.GoalTextBox.Text,
-																this.StepsTextBox.Text);
-			ResultLabel.Text = "You reached " + result + "% of your goal.";
+
+			try
+			{
+				var result = customer.CalculatePercentOfGoalSteps(this.GoalTextBox.Text, this.StepsTextBox.Text);
+				ResultLabel.Text = "You reached " + result + "% of your goal.";
+			}
+			catch (ArgumentException ex)
+			{
+				MessageBox.Show("Your entry was not valid: " + ex.Message);
+				ResultLabel.Text = string.Empty;
+			}
 		}
 	}
 }
