@@ -4,8 +4,16 @@ using System.Text;
 
 namespace ACM.BL
 {
+	public enum PaymentTypeOptions
+	{
+		CreditCard = 1,
+		PayPal = 2
+	}
+
     public class Payment
     {
+		public int PaymentType { get; set; }
+
 		public void ProcessPayment()
 		{
 			// -- Process the payment --

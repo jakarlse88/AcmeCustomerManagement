@@ -92,6 +92,10 @@
       <Project>{326c2d2e-d985-4961-968e-1a15ec315ab0}</Project>
       <Name>ACM.BL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Core.Common\Core.Common.csproj">
+      <Project>{F6E8B374-7BB3-4487-A6F1-CE48CD6A5D6E}</Project>
+      <Name>Core.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

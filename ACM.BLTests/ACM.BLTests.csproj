@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="CustomerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OrderControllerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\ACM.Biz\ACM.BL.csproj">
       <Project>{326c2d2e-d985-4961-968e-1a15ec315ab0}</Project>
       <Name>ACM.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Common\Core.Common.csproj">
+      <Project>{f6e8b374-7bb3-4487-a6f1-ce48cd6a5d6e}</Project>
+      <Name>Core.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
